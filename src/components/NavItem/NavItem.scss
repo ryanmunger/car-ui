@@ -1,0 +1,25 @@
+.layout {
+    padding: 0;
+    margin: 0;
+    background: rgb(243,243,243);
+    height: 230px;
+    a {
+        border-top: 1px solid rgb(155,155,155);
+        color: rgb(74, 74, 74);
+        display: block;
+        font-weight: 600;
+        height: 230px;
+        line-height: 230px;
+        text-decoration: none;
+        text-transform: uppercase;
+        &.active {
+            background: rgb(0,0,0);
+            color: rgb(255,255,255);
+        }
+    }
+    &:first-child {
+        a {
+            border-top: none;
+        }
+    }
+}

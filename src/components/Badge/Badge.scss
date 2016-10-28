@@ -1,0 +1,13 @@
+.layout {
+    height: 120px;
+    width: 120px;
+    background: linear-gradient(#f14654, #97041b);
+    border-radius: 50%;
+    position: absolute;
+    top: -65px;
+    box-shadow: 0px 2px 4px rgba(#000, 0.4);
+    i {
+        font-size: 40px;
+        line-height: 120px;
+    }
+}
