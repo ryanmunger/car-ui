@@ -36,6 +36,10 @@ module.exports = {
                 exclude: /assets\/.*/,
                 loader: 'file?name=/fonts/[name].[ext]'
             },
+            {
+                test: /assets\/.*\.(jpg|png|svg|mp4)$/,
+                loader: 'file?name=assets/[name].[ext]'
+            }
         ]
     }
 };

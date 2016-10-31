@@ -1,14 +1,22 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { Router, Route, IndexRedirect, IndexRoute, hashHistory } from 'react-router';
 import App from './App';
-import { AudioControlsView, CallControlsView, AirControlsView } from 'views';
+import { Audio, AudioControlsBlueToothView, AudioControlsLibraryView, Talks, TalksControlsContactsView, TalksControlsMessagesView, AirControlsView, AudioControlsRadioView } from 'views';
 
 render((
-    <Router history={browserHistory}>
+    <Router history={hashHistory}>
         <Route path="/" component={App}>
-            <IndexRoute component={AudioControlsView} />
-            <Route path="call" component={CallControlsView} />
+            <IndexRedirect to="/audio/bluetooth" />
+            <Route path="audio" component={Audio}>
+                <Route path="bluetooth" component={AudioControlsBlueToothView} />
+                <Route path="radio" component={AudioControlsRadioView} />
+                <Route path="library" component={AudioControlsLibraryView} />
+            </Route>
+            <Route path="talks" component={Talks}>
+                <Route path="contacts" component={TalksControlsContactsView} />
+                <Route path="messages" component={TalksControlsMessagesView} />
+            </Route>
             <Route path="air" component={AirControlsView} />
         </Route>
     </Router>
