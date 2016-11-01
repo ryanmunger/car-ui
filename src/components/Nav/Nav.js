@@ -4,7 +4,7 @@ import NavItem from 'components/NavItem';
 
 export class Nav extends Component {
     static propTypes = {
-        children: PropTypes.node.isRequired,
+        children   : PropTypes.node.isRequired,
         currentPath: PropTypes.string
     }
     render () {

@@ -4,8 +4,8 @@ import classes from './NavItem.scss';
 
 export class NavItem extends Component {
     static propTypes = {
-        link: PropTypes.string.isRequired,
-        title: PropTypes.string.isRequired,
+        link       : PropTypes.string.isRequired,
+        title      : PropTypes.string.isRequired,
         currentPath: PropTypes.string
     }
 

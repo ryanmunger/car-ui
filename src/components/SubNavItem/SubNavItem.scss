@@ -1,0 +1,15 @@
+.layout {
+    display: inline-block;
+    margin-right: 75px;
+    &:last-child {
+        margin-right: 0;
+    }
+    a {
+        text-decoration: none;
+        color: #fff;
+        &.active {
+            text-decoration: underline;
+            font-size: 22px;
+        }
+    }
+}

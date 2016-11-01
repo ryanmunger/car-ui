@@ -4,7 +4,7 @@ import classes from './SubNavItem.scss';
 
 export class SubNavItem extends Component {
     static propTypes = {
-        link: PropTypes.string.isRequired,
+        link : PropTypes.string.isRequired,
         title: PropTypes.string.isRequired
     }
 

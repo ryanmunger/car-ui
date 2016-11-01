@@ -4,9 +4,9 @@ import classes from './Icon.scss';
 export class Icon extends Component {
     static propTypes = {
         children: PropTypes.node,
-        name: PropTypes.string.isRequired,
-        size: PropTypes.string,
-        style: PropTypes.object
+        name    : PropTypes.string.isRequired,
+        size    : PropTypes.string,
+        style   : PropTypes.object
     }
 
     render () {
