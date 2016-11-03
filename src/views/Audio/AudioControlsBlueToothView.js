@@ -2,6 +2,9 @@ import React, { Component, PropTypes } from 'react';
 import { findDOMNode } from 'react-dom';
 import { connect } from 'react-redux';
 import AudioPlayer from 'components/AudioPlayer';
+import Button from 'components/Button';
+import Icon from 'components/Icon';
+import Text from 'components/Text';
 import { sayHi } from 'reducers/audio';
 
 export class AudioControlsBlueToothView extends Component {
@@ -13,28 +16,34 @@ export class AudioControlsBlueToothView extends Component {
         song: PropTypes.string.isRequired
     }
 
-    play (song) {
-        const audio = findDOMNode(song);
-        audio.play();
+    state = {
+        isPlaying: false
     }
 
-    pause (song) {
+    togglePlay (song) {
+        const { isPlaying } = this.state;
         const audio = findDOMNode(song);
-        audio.pause();
+
+        this.setState({ isPlaying: audio.paused });
+        isPlaying ? audio.pause() : audio.play();
     }
 
     render () {
         const { albumCover, albumTitle, artist, audioFile, song } = this.props;
+        const { isPlaying } = this.state;
         return (
             <div>
                 <AudioPlayer />
-                <img src={albumCover} />
-                <p>{albumTitle}</p>
-                <p>{artist}</p>
-                <p>{song}</p>
-                <audio src={audioFile} ref="song"></audio>
-                <button onClick={() => this.play(this.refs.song)}>Play</button>
-                <button onClick={() => this.pause(this.refs.song)}>Pause</button>
+                <div style={{ textAlign: 'center' }}>
+                    <img src={albumCover} />
+                    <Text style={{ fontWeight: 'bold', margin: '14px 0 0 0' }}>{albumTitle}</Text>
+                    <Text style={{ margin: '0' }}>{artist}</Text>
+                    <Text style={{ margin: '0' }}>{song}</Text>
+                    <audio src={audioFile} ref="song"></audio>
+                    <Button onClick={() => this.togglePlay(this.refs.song)} style={{ marginTop: '20px' }}>
+                        <Icon name={`${isPlaying ? 'pause' : 'play'}`} size="3" />
+                    </Button>
+                </div>
             </div>
         );
     }

@@ -1,12 +1,12 @@
-import AugustanaCover from '../assets/augustana-cover.jpg';
+import AwolNationCover from '../assets/awolnation-cover.jpg';
 
 const songs = [
     {
-        albumCover: AugustanaCover,
-        albumTitle: 'All the Stars and Boulevards',
-        artist    : 'Augustana',
-        audioFile : 'https://dl.dropboxusercontent.com/s/xjj7icik0buaero/boston.mp3',
-        song      : 'Boston'
+        albumCover: AwolNationCover,
+        albumTitle: 'Megalithic Symphony',
+        artist    : 'Awolnation',
+        audioFile : 'https://dl.dropboxusercontent.com/s/2wdbuc75yha1086/sail.mp3',
+        song      : 'Sail'
     }
 ];
 
