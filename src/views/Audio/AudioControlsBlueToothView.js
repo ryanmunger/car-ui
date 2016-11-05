@@ -16,35 +16,24 @@ export class AudioControlsBlueToothView extends Component {
         song: PropTypes.string.isRequired
     }
 
-    state = {
-        isPlaying: false
-    }
-
-    togglePlay (song) {
-        const { isPlaying } = this.state;
+    togglePlay (song, audioPlayer) {
+        const { isPlaying } = audioPlayer.state;
         const audio = findDOMNode(song);
 
-        this.setState({ isPlaying: audio.paused });
+        audioPlayer.setState({ isPlaying: audio.paused });
         isPlaying ? audio.pause() : audio.play();
     }
 
     render () {
         const { albumCover, albumTitle, artist, audioFile, song } = this.props;
-        const { isPlaying } = this.state;
         return (
-            <div>
-                <AudioPlayer />
-                <div style={{ textAlign: 'center' }}>
-                    <img src={albumCover} />
-                    <Text style={{ fontWeight: 'bold', margin: '14px 0 0 0' }}>{albumTitle}</Text>
-                    <Text style={{ margin: '0' }}>{artist}</Text>
-                    <Text style={{ margin: '0' }}>{song}</Text>
-                    <audio src={audioFile} ref="song"></audio>
-                    <Button onClick={() => this.togglePlay(this.refs.song)} style={{ marginTop: '20px' }}>
-                        <Icon name={`${isPlaying ? 'pause' : 'play'}`} size="3" />
-                    </Button>
-                </div>
-            </div>
+            <AudioPlayer
+                albumCover={albumCover}
+                albumTitle={albumTitle}
+                artist={artist}
+                audioFile={audioFile}
+                onClick={this.togglePlay}
+                song={song} />
         );
     }
 }
