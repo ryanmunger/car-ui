@@ -1,0 +1,15 @@
+.layout {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.channel-list {
+    li {
+        &:last-child {
+            border: none;
+            padding-right: 0;
+            margin-right: 0;
+        }
+    }
+}
