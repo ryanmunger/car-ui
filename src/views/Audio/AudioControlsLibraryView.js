@@ -1,5 +1,8 @@
+
 import React, { Component } from 'react';
+import Icon from 'components/Icon';
 import Text from 'components/Text';
+import Wrapper from 'components/Wrapper';
 
 const songs = [
     {
@@ -75,8 +78,29 @@ export class AudioControlsLibraryView extends Component {
             );
         });
         return (
-            <div style={{ height: '378px', overflowX: 'hidden', overflowY: 'scroll', margin: '40px auto 0 auto', width: '90%' }}>
-                {songList}
+            <div>
+                <Wrapper
+                    style={{
+                        height: '378px',
+                        overflowX: 'hidden',
+                        overflowY: 'scroll',
+                        margin: '40px auto 0 auto',
+                        width: '90%'
+                    }}>
+                    {songList}
+                </Wrapper>
+                <Wrapper style={{
+                            background: 'rgb(38,38,38)',
+                            height: '93px',
+                            left: '-20px',
+                            position: 'relative',
+                            textAlign: 'center',
+                            width: '510px'
+                }}>
+                    <Icon name="caret-up" style={{ fontSize: '20px' }} />
+                    <Text style={{ fontWeight: 'bold', margin: '0 0 4px 0' }}>Uptown Funk</Text>
+                    <Text style={{ margin: 0 }}>Bruno Mars</Text>
+                </Wrapper>
             </div>
         );
     }
