@@ -4,12 +4,13 @@ import classes from './Text.scss';
 export class Text extends Component {
     static propTypes = {
         children: PropTypes.node.isRequired,
+        onClick: PropTypes.func,
         style: PropTypes.object
     }
     render () {
-        const { children, style } = this.props;
+        const { children, onClick, style } = this.props;
         return (
-            <p style={style}>{children}</p>
+            <p style={style} onClick={onClick}>{children}</p>
         );
     }
 }

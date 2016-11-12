@@ -4,13 +4,18 @@ import Icon from 'components/Icon';
 
 export class Badge extends Component {
     static propTypes = {
-        iconName: PropTypes.string
+        children: PropTypes.node,
+        classNames: PropTypes.string,
+        iconName: PropTypes.string,
+        onClick: PropTypes.func,
+        style: PropTypes.object
     }
     render () {
-        const { iconName } = this.props;
+        const { children, classNames, iconName, onClick, style } = this.props;
         return (
-            <div className={classes.layout}>
+            <div onClick={onClick} style={style} className={`${classes[classNames]} ${classes.layout}`}>
                 {iconName ? <Icon name={iconName}/> : null}
+                {children ? children : null}
             </div>
         );
     }

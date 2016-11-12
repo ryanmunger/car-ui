@@ -5,7 +5,16 @@ import { createStore } from 'redux';
 import rootReducer from 'reducers';
 import { Router, Route, IndexRedirect, hashHistory } from 'react-router';
 import App from './App';
-import { Audio, AudioControlsBlueToothView, AudioControlsLibraryView, Talks, TalksControlsContactsView, TalksControlsMessagesView, AirControlsView, AudioControlsRadioView } from 'views';
+import {
+    Audio,
+    AudioControlsBlueToothView,
+    AudioControlsLibraryView,
+    Talks,
+    TalksControlsContactsView,
+    TalksControlsMessagesView,
+    AirControlsView,
+    AudioControlsRadioView
+} from 'views';
 
 const store = createStore(rootReducer);
 

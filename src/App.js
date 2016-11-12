@@ -34,7 +34,7 @@ export class App extends Component {
                 </Container>
                 <Maps location="36.12,-115.16"/>
                 <Footer>
-                    <Badge iconName="microphone" />
+                    <Badge iconName="microphone" classNames="footer" />
                 </Footer>
             </div>
         );

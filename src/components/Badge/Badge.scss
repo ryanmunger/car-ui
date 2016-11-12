@@ -1,8 +1,11 @@
 .layout {
     height: 80px;
     width: 80px;
-    background: linear-gradient(#f14654, #97041b);
     border-radius: 50%;
+}
+
+.footer, .endCall {
+    background: linear-gradient(#f14654, #97041b);
     position: absolute;
     top: -35px;
     left: 70px;
@@ -10,5 +13,35 @@
     i {
         font-size: 30px;
         line-height: 80px;
+    }
+}
+
+.endCall {
+    position: static;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    margin-top: 25px;
+    i {
+        line-height: 60px;
+        font-size: 24px;
+        transform: rotate(133deg);
+    }
+}
+
+.talk {
+    background: #fff;
+    color: rgb(0,186,210);
+    width: 130px;
+    height: 130px;
+    border: 3px solid rgb(0,186,210);
+    text-align: center;
+    text-transform: uppercase;
+    display: inline-block;
+    margin: 0 15px;
+    i {
+        display: block;
+        font-size: 40px;
+        margin: 25px 0 10px 0;
     }
 }
