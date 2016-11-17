@@ -17,13 +17,13 @@ export class Toggle extends Component {
         return (
             <div style={{ display: 'inline-block' }}>
                 <div
-                    className={`${classes.layout} ${toggleActive ? classes.active : null}`}
+                    className={`${classes.layout} ${!toggleActive ? classes.active : null}`}
                     onClick={() => this.setState({ toggleActive: !this.state.toggleActive })}
                 >
                     {onText}
                 </div>
                 <div
-                    className={`${classes.layout} ${!toggleActive ? classes.active : null}`}
+                    className={`${classes.layout} ${toggleActive ? classes.active : null}`}
                     onClick={() => this.setState({ toggleActive: !this.state.toggleActive })}
                 >
                     {offText}

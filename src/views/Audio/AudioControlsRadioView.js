@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { findDOMNode } from 'react-dom';
 import Carousel from 'components/Carousel';
 import List from 'components/List';
 import ListItem from 'components/ListItem';
@@ -8,9 +9,15 @@ import Slider from 'components/Slider';
 const channels = ['88.2', '90.3', '93.3', '94.1', '103.7'];
 
 export class AudioControlsRadioView extends Component {
+
+    componentDidMount () {
+        this.refs.radioSong.play();
+    }
+
     render () {
         return (
             <div style={{ textAlign: 'center' }}>
+                <audio src="https://dl.dropboxusercontent.com/s/xjj7icik0buaero/boston.mp3" ref="radioSong"></audio>
                 <Carousel />
                 <Text
                     style={{
@@ -25,10 +32,8 @@ export class AudioControlsRadioView extends Component {
                     {channels.map((channel, key) => (
                         <ListItem
                             classNames="channel-list-item"
-                            key={key}
-                            style={{
-
-                            }}>
+                            style={{ color: channel === '94.1' ? 'rgb(0,186,210)' : 'inherit' }}
+                            key={key}>
                             {channel}
                         </ListItem>
                     ))}

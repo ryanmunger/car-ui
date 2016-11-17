@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import Avatar from 'components/Avatar';
 import Badge from 'components/Badge';
 import Icon from 'components/Icon';
 import Text from 'components/Text';
+import Timer from 'components/Timer';
 import Toggle from 'components/Toggle';
 import Wrapper from 'components/Wrapper';
-import TalksControlsCallView from './TalksControlsCallView';
 
 const contacts = [
     {
@@ -53,11 +54,24 @@ export class TalksControlsContactsView extends Component {
 
     state = {
         callPrompt: false,
-        calling: false
+        calling: false,
+        secondsElapsed: 0
+    }
+
+    tick () {
+        this.setState((prevState) => ({
+            secondsElapsed: prevState.secondsElapsed + 1
+        }));
     }
 
     render () {
-        const { callPrompt, calling } = this.state;
+        const { callPrompt, calling, secondsElapsed } = this.state;
+        // if (calling) {
+        //     console.log('hello');
+        //     this.interval = setInterval(() => this.tick(), 1000);
+        // } else {
+        //     clearInterval(this.interval);
+        // }
         const contactsList = contacts.map((contact, index) => {
             return (
                 <div key={index} style={{ display: 'flex', justifyContent: 'space-between' }} >
@@ -100,8 +114,9 @@ export class TalksControlsContactsView extends Component {
                     : null
                 }
                 <Wrapper
+                    classNames="scroller"
                     style={{
-                        height: !calling ? '378px' : 'auto',
+                        height: !calling ? '358px' : 'auto',
                         margin: '40px auto 0 auto',
                         overflowX: 'hidden',
                         overflowY: 'scroll',
@@ -111,23 +126,31 @@ export class TalksControlsContactsView extends Component {
                     {
                         calling
                         ?
-                            <TalksControlsCallView />
+                            <div style={{ textAlign: 'center', marginTop: '20px' }}>
+                                <Avatar imageUrl="http://placehold.it/150x150" />
+                                <Text style={{ fontSize: '22px', margin: '30px 0 5px 0' }}>Calling&hellip;</Text>
+                                <Text style={{ fontSize: '32px', margin: '0 0 25px 0' }}>Thomas Muller</Text>
+                                <Text style={{ margin: 0 }}>00:<Timer /></Text>
+                                <Badge iconName="phone" classNames="endCall" onClick={() => this.setState({ calling: false })}/>
+                            </div>
                         :
                             contactsList
                     }
                 </Wrapper>
                 {   !calling
                     ?
-                        <Wrapper style={{
+                        <Wrapper
+                            style={{
                                     background: 'rgb(38,38,38)',
                                     height: '93px',
+                                    bottom: '-20px',
                                     left: '-20px',
                                     lineHeight: '93px',
                                     padding: '0 35px',
                                     position: 'relative',
                                     textAlign: 'right',
                                     width: '510px'
-                        }}>
+                            }}>
                             <Text style={{
                                 display: 'inline-block',
                                 margin: '0 20px 0 0',

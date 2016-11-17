@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import classes from './Carousel.scss';
 import Icon from 'components/Icon';
 import Text from 'components/Text';
 
 export class Carousel extends Component {
+    static propTypes = {
+        onClick: PropTypes.func
+    }
     render () {
         const iconStyle = {
             position: 'absolute',
@@ -17,8 +20,9 @@ export class Carousel extends Component {
         const rightIconStyle = Object.assign({}, iconStyle, {
             right: '20px'
         });
+        const { onClick } = this.props;
         return (
-            <div className={classes.layout}>
+            <div className={classes.layout} onClick={onClick}>
                 <Icon
                     name="chevron-left"
                     style={leftIconStyle}
@@ -34,11 +38,11 @@ export class Carousel extends Component {
                     style={{
                         margin: '0 0 4px 0',
                         fontWeight: 'bold' }}>
-                    A Sky Full of Stars
+                    Boston
                 </Text>
                 <Text
                     style={{ margin: '0 0 0 0' }}>
-                    Coldplay
+                    Augustana
                 </Text>
                 <Icon
                     name="chevron-right"

@@ -80,8 +80,9 @@ export class AudioControlsLibraryView extends Component {
         return (
             <div>
                 <Wrapper
+                    classNames="scroller"
                     style={{
-                        height: '378px',
+                        height: '460px',
                         overflowX: 'hidden',
                         overflowY: 'scroll',
                         margin: '40px auto 0 auto',
@@ -89,21 +90,22 @@ export class AudioControlsLibraryView extends Component {
                     }}>
                     {songList}
                 </Wrapper>
-                <Wrapper style={{
-                            background: 'rgb(38,38,38)',
-                            height: '93px',
-                            left: '-20px',
-                            position: 'relative',
-                            textAlign: 'center',
-                            width: '510px'
-                }}>
-                    <Icon name="caret-up" style={{ fontSize: '20px' }} />
-                    <Text style={{ fontWeight: 'bold', margin: '0 0 4px 0' }}>Uptown Funk</Text>
-                    <Text style={{ margin: 0 }}>Bruno Mars</Text>
-                </Wrapper>
             </div>
         );
     }
 }
 
 export default AudioControlsLibraryView;
+
+// <Wrapper style={{
+//             background: 'rgb(38,38,38)',
+//             height: '93px',
+//             left: '-20px',
+//             position: 'relative',
+//             textAlign: 'center',
+//             width: '510px'
+// }}>
+//     <Icon name="caret-up" style={{ fontSize: '20px' }} />
+//     <Text style={{ fontWeight: 'bold', margin: '0 0 4px 0' }}>Uptown Funk</Text>
+//     <Text style={{ margin: 0 }}>Bruno Mars</Text>
+// </Wrapper>

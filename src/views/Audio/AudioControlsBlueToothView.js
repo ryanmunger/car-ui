@@ -27,13 +27,15 @@ export class AudioControlsBlueToothView extends Component {
     render () {
         const { albumCover, albumTitle, artist, audioFile, song } = this.props;
         return (
-            <AudioPlayer
-                albumCover={albumCover}
-                albumTitle={albumTitle}
-                artist={artist}
-                audioFile={audioFile}
-                onClick={this.togglePlay}
-                song={song} />
+            <div>
+                <AudioPlayer
+                    albumCover={albumCover}
+                    albumTitle={albumTitle}
+                    artist={artist}
+                    audioFile={audioFile}
+                    onClick={this.togglePlay}
+                    song={song} />
+            </div>
         );
     }
 }
