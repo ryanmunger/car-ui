@@ -26,15 +26,18 @@ export class App extends Component {
                         link="/talks/contacts"
                         title="Talks" />
                     <NavItem
-                        link="/air"
-                        title="Air" />
+                        link="/climate"
+                        title="Climate" />
                 </Nav>
                 <Container>
                     {children}
                 </Container>
                 <Maps location="36.12,-115.16"/>
                 <Footer>
-                    <Badge iconName="microphone" classNames="footer" />
+                    <Badge
+                        classNames="footer"
+                        containerStyle={{ bottom: '28px', left: '70px', position: 'absolute' }}
+                        iconName="microphone" />
                 </Footer>
             </div>
         );

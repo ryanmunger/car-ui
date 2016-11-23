@@ -12,7 +12,7 @@ import {
     Talks,
     TalksControlsContactsView,
     TalksControlsMessagesView,
-    AirControlsView,
+    ClimateControlsView,
     AudioControlsRadioView
 } from 'views';
 
@@ -32,7 +32,7 @@ render((
                     <Route path="contacts" component={TalksControlsContactsView} />
                     <Route path="messages" component={TalksControlsMessagesView} />
                 </Route>
-                <Route path="air" component={AirControlsView} />
+                <Route path="climate" component={ClimateControlsView} />
             </Route>
         </Router>
     </Provider>

@@ -5,7 +5,7 @@ import AudioControlsLibraryView from 'views/Audio/AudioControlsLibraryView';
 import Talks from 'views/Talks/Talks';
 import TalksControlsContactsView from 'views/Talks/TalksControlsContactsView';
 import TalksControlsMessagesView from 'views/Talks/TalksControlsMessagesView';
-import AirControlsView from 'views/AirControlsView';
+import ClimateControlsView from 'views/ClimateControlsView';
 
 export {
     Audio,
@@ -13,7 +13,7 @@ export {
     Talks,
     TalksControlsContactsView,
     TalksControlsMessagesView,
-    AirControlsView,
+    ClimateControlsView,
     AudioControlsRadioView,
     AudioControlsLibraryView
 };
