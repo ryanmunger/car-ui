@@ -60,18 +60,25 @@ const songs = [
 ];
 
 export class AudioControlsLibraryView extends Component {
+
+    handleClick () {
+        this.refs.librarySong.play();
+    }
+
     render () {
         const songList = songs.map((song, index) => {
             return (
                 <div key={index} style={{ display: 'flex', justifyContent: 'space-between' }} >
-                    <Text style={{
+                    <Text
+                        onClick={() => this.handleClick()}
+                        style={{
                         fontSize: '22px',
                         width: '65%',
                         margin: '0 0 15px 0'
                     }}>
                         {song.title}
                     </Text>
-                    <Text style={{ width: '35%', margin: '4px auto 0 auto' }}>
+                    <Text onClick={() => this.handleClick()} style={{ width: '35%', margin: '4px auto 0 auto' }}>
                         {song.artist}
                     </Text>
                 </div>
@@ -79,6 +86,7 @@ export class AudioControlsLibraryView extends Component {
         });
         return (
             <div>
+                <audio src="https://dl.dropboxusercontent.com/s/2wdbuc75yha1086/sail.mp3" ref="librarySong"></audio>
                 <Wrapper
                     classNames="scroller"
                     style={{
@@ -96,16 +104,3 @@ export class AudioControlsLibraryView extends Component {
 }
 
 export default AudioControlsLibraryView;
-
-// <Wrapper style={{
-//             background: 'rgb(38,38,38)',
-//             height: '93px',
-//             left: '-20px',
-//             position: 'relative',
-//             textAlign: 'center',
-//             width: '510px'
-// }}>
-//     <Icon name="caret-up" style={{ fontSize: '20px' }} />
-//     <Text style={{ fontWeight: 'bold', margin: '0 0 4px 0' }}>Uptown Funk</Text>
-//     <Text style={{ margin: 0 }}>Bruno Mars</Text>
-// </Wrapper>

@@ -7,17 +7,26 @@ import Text from 'components/Text';
 import FanIcon from '../assets/fan-icon.jpg';
 
 export class ClimateControlsView extends Component {
+    state = {
+        temperature: 70
+    }
+
+    handleChange (e) {
+        this.setState({ temperature: e.target.valueAsNumber });
+    }
+
     render () {
+        const { temperature } = this.state;
         return (
             <div>
                 <div style={{ textAlign: 'center' }}>
                     <Text style={{ margin: '40px 0 0 0' }}>Inside Temperature</Text>
-                    <Text style={{ fontSize: '52px', margin: '0 0 0 0' }}>70&deg;F</Text>
+                    <Text style={{ fontSize: '52px', margin: '0 0 0 0' }}>{temperature}&deg;F</Text>
                 </div>
                 <div style={{ width: '400px', margin: '60px auto 0 auto' }}>
-                    <Text style={{ display: 'inline-block', fontSize: '24px', margin: '0 0 10px 0' }}>Heat</Text>
-                    <Text style={{ display: 'inline-block', float: 'right', fontSize: '24px', margin: '0 0 10px 0' }}>Cool</Text>
-                    <Slider style={{ display: 'block', margin: 0, width: '100%' }} />
+                    <Text style={{ display: 'inline-block', fontSize: '24px', margin: '0 0 10px 0' }}>Cool</Text>
+                    <Text style={{ display: 'inline-block', float: 'right', fontSize: '24px', margin: '0 0 10px 0' }}>Heat</Text>
+                    <Slider classNames="heating" onChange={(e) => this.handleChange(e)} min="60" max="80" step="1" style={{ display: 'block', margin: 0, width: '100%' }} />
                 </div>
 
                 <div style={{ width: '400px', margin: '100px auto 0 auto', textAlign: 'center' }}>
@@ -42,7 +51,7 @@ export class ClimateControlsView extends Component {
                             5
                         </ListItem>
                     </List>
-                    <Slider style={{ margin: '30px 0 0 0', width: '100%' }} />
+                    <Slider classNames="fan" min="0" max="5" step="1" style={{ margin: '30px 0 0 0', width: '100%' }} />
                 </div>
             </div>
         );

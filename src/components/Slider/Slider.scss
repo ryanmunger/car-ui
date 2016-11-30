@@ -18,3 +18,15 @@
         top: -20px;
     }
 }
+
+.heating {
+    &::-webkit-slider-runnable-track {
+        background: linear-gradient(90deg, rgb(52,170,230), rgb(232,1,29));
+    }
+}
+
+.fan {
+    &::-webkit-slider-runnable-track {
+        background: rgb(155,155,155);
+    }
+}
