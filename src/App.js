@@ -17,7 +17,7 @@ export class App extends Component {
     render () {
         const { children } = this.props;
         return (
-            <div>
+            <div style={{ width: '987px', margin: '0 auto' }}>
                 <Nav currentPath={this.props.location.pathname}>
                     <NavItem
                         link="/audio/bluetooth"
