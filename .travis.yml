@@ -4,9 +4,10 @@ node_js:
 script:
     - npm run build
 deploy:
-  provider: heroku
-  api_key:
-    secure: cF6WEObMMIrIWV2cvjiArTTqFgTvs2xVzI1vGh64J97aDNvXtMP3GlbI8tpenaCBMtW13NpoxFVayxgRr+i0tCdF8+Ehk4hJFG4lPXk9mfDrGq4NrtjZ3XY/rOE1ymdvOZn/OR6MFYXNerOV6QDlt2SGgqGNgVhHZErkl5mML8wQhuq3rwe+ILloT/47wBkQdTCGJuj0ULf06Os8qyDvX1qQByLTjJbBilhxNwdZhlcrDvn4DiN7zOO8EDkCdwBWtU7Zn2jMogAFTRM+7V1cQk0qjr2qzQT4Rd0RkhHKjJatkINMw/tDKOalXL+SjlqQp03Trh1X12yOKc9G/gW71izqppk+XRwzwPNiHF3VcRVa1WDMrwQ9f3MHpjVDKCWVbfTnPLLwFgrse1KvR7YF53A8R0KF/aIciDj0nPhjQQYH/mCkettRzYSKMOtH9cB297SUYv9tPQzxxVYobZ/kWN1clnmFdWXpbd0rLCWSHiQWWqbZBVWQziz9Z2uIe630BVXQA4HNjTXoaoOHr3y0lGMNpxR2jYngcZHcD6zsyGMN9pPqitnJ3zS+E+ARx1lgMVG/AHbhBOn1+YXGgclMglZ4jNw2r9zmz0JjeVTh1koamr6yI1WKcsmJEqu608jo0lYxFQnwVXbpIeVo7u8FA4ZBPnHQpsz34Pnk7vN2/jQ=
-  app: hidden-beach-34345
-  on:
-    repo: ryanmunger/car-ui
+    provider: heroku
+    api_key:
+        secure: cF6WEObMMIrIWV2cvjiArTTqFgTvs2xVzI1vGh64J97aDNvXtMP3GlbI8tpenaCBMtW13NpoxFVayxgRr+i0tCdF8+Ehk4hJFG4lPXk9mfDrGq4NrtjZ3XY/rOE1ymdvOZn/OR6MFYXNerOV6QDlt2SGgqGNgVhHZErkl5mML8wQhuq3rwe+ILloT/47wBkQdTCGJuj0ULf06Os8qyDvX1qQByLTjJbBilhxNwdZhlcrDvn4DiN7zOO8EDkCdwBWtU7Zn2jMogAFTRM+7V1cQk0qjr2qzQT4Rd0RkhHKjJatkINMw/tDKOalXL+SjlqQp03Trh1X12yOKc9G/gW71izqppk+XRwzwPNiHF3VcRVa1WDMrwQ9f3MHpjVDKCWVbfTnPLLwFgrse1KvR7YF53A8R0KF/aIciDj0nPhjQQYH/mCkettRzYSKMOtH9cB297SUYv9tPQzxxVYobZ/kWN1clnmFdWXpbd0rLCWSHiQWWqbZBVWQziz9Z2uIe630BVXQA4HNjTXoaoOHr3y0lGMNpxR2jYngcZHcD6zsyGMN9pPqitnJ3zS+E+ARx1lgMVG/AHbhBOn1+YXGgclMglZ4jNw2r9zmz0JjeVTh1koamr6yI1WKcsmJEqu608jo0lYxFQnwVXbpIeVo7u8FA4ZBPnHQpsz34Pnk7vN2/jQ=
+    skip_cleanup: true
+    app: hidden-beach-34345
+    on:
+        repo: ryanmunger/car-ui
